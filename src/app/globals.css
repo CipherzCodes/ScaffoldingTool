@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@reference utilities;
+@reference components;
+@reference base;
+
+
+/* ---------------------------------------------
+   Base
+---------------------------------------------- */
+
+html {
+  font-size: 20; /* try 16 → 17 or 18 */
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-jetbrains);
+  background-color: #ffffff;
+  color: #000000;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------
+   Scrollbar (subtle, modern)
+---------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------
+   Buttons (base behaviour only)
+---------------------------------------------- */
+button {
+  transition: all 0.15s ease;
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------------------------------------
+   Inputs
+---------------------------------------------- */
+input,
+select,
+textarea {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------
+   Cards / Panels
+---------------------------------------------- */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------------------------------------
+   Subtle separators
+---------------------------------------------- */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.08),
+    transparent
+  );
+}
+
+/* ---------------------------------------------
+   Modal backdrop
+---------------------------------------------- */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+/* ---------------------------------------------
+   Typography helpers
+---------------------------------------------- */
+.text-muted {
+  color: #6b7280;
+}
+
+.text-subtle {
+  color: #9ca3af;
+}
+
+/* ---------------------------------------------
+   Animations (subtle, premium)
+---------------------------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.25s ease-out;
+}
+
+.dark,
+.dark body {
+  background-color: #0f0f10;
+  color: #e5e7eb;
+}
+
+.dark .card {
+  background-color: #111111;
+  border-color: #222222;
+}
+
+.dark input {
+  background-color: #111111;
+  border-color: #333333;
+  color: #ffffff;
+}
+.test {
+  @apply bg-black text-white p-8;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(24, 24, 27, 0.9);
+}
+
+.dark .bg-white {
+  background-color: #18181b;
+}
+
+.dark .border-gray-200 {
+  border-color: #2a2a2e;
+}
+
+/* ---------------------------------------------
+   Dark mode shadows (semantic, safe)
+---------------------------------------------- */
+.dark .shadow-floating-lg {
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.dark .shadow-floating-md {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-tooltip {
+  animation: tooltipFade 0.12s ease-out;
+}
