@@ -58,4 +58,4 @@ export const pythonMicroserviceSchema: SchemaNode = {
       item: endpointSchema,
     },
   },
-};
+} as const; // Added "as const" to treat string literals as specific types
